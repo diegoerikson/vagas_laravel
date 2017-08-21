@@ -51,6 +51,33 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'active',
+            'skype', 
+            'phone', 
+            'phone2', 
+            'gender', 
+            'dtbirth',    
+            'idcompany', 
+            'idcity', 
+            'type', 
+            'cpf_cnpj', 
+            'neighborhood',
+            'street', 
+            'number', 
+            'complement',
+            'cep', 
+            'site', 
+            'linkedin', 
+            'dtexclusion', 
+            'note', 
+            'image',
+            'cnh',  
+            'acceptemail', 
+            'deficient', 
+            'updated_at', 
+            'created_at'            
+            
+            
         ]);
     }
 
