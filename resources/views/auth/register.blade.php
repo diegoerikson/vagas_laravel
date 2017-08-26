@@ -239,7 +239,7 @@
                             <label for="streetnumber" class="col-md-4 control-label">Número</label>
 
                             <div class="col-md-6">
-                                <input id="streetnumber" class="form-control" value="{{ old('streetnumber') }}" name="streetnumber">
+                                <input id="streetnumber" type="number" class="form-control" value="{{ old('streetnumber') }}" name="streetnumber">
 
                                 @if ($errors->has('streetnumber'))
                                     <span class="help-block">
