@@ -16,8 +16,8 @@ class User extends Authenticatable
      */
     protected $fillable = ['iduser', 'name', 'password', 'email', 'active',
     'skype', 'phone', 'phone2', 'gender', 'dtbirth',
-    'idcompany', 'idcity', 'type', 'cpf_cnpj', 'neighborhood',
-    'street', 'number', 'complement',
+    'idcompany', 'idcity', 'usertype', 'cpf_cnpj', 'neighborhood',
+    'street', 'streetnumber', 'complement',
     'cep', 'site', 'linkedin', 'dtexclusion', 'note', 'image',
     'cnh', 'acceptemail', 'deficient', 'updated_at', 'created_at'];
 

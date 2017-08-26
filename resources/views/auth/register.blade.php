@@ -65,8 +65,8 @@
 
                             <div class="col-md-6">
                                 <Select name="deficient" class="form-control" value="{{ old('deficient') }}" required>                                    
-                                    <option value="S">Sim</option>
                                     <option value="N">Não</option>
+                                    <option value="S">Sim</option>                                    
                                 </select>  
                                 
                                 @if ($errors->has('deficient'))
@@ -81,7 +81,7 @@
                             <label for="cnh" class="col-md-4 control-label">CNH</label>
 
                             <div class="col-md-6">
-                                <input id="cnh" type="text" class="form-control" name="cnh" value="{{ old('cnh') }}" required>
+                                <input id="cnh" type="text" class="form-control" name="cnh" value="{{ old('cnh') }}">
 
                                 @if ($errors->has('cnh'))
                                     <span class="help-block">
@@ -95,7 +95,7 @@
                             <label for="note" class="col-md-4 control-label">Observações</label>
 
                             <div class="col-md-6">
-                                <input id="note" type="text" class="form-control" name="note" value="{{ old('note') }}" required>
+                                <input id="note" type="text" class="form-control" name="note" value="{{ old('note') }}">
 
                                 @if ($errors->has('note'))
                                     <span class="help-block">
@@ -109,7 +109,7 @@
                             <label for="image" class="col-md-4 control-label">Foto</label>
 
                             <div class="col-md-6">
-                                <input id="image" type="text" class="form-control" name="image" value="{{ old('image') }}" required>
+                                <input id="image" type="text" class="form-control" name="image" value="{{ old('image') }}">
 
                                 @if ($errors->has('image'))
                                     <span class="help-block">
@@ -123,7 +123,7 @@
                             <label for="linkedin" class="col-md-4 control-label">Linkedin</label>
 
                             <div class="col-md-6">
-                                <input id="linkedin" type="text" class="form-control" name="linkedin" value="{{ old('linkedin') }}" required>
+                                <input id="linkedin" type="text" class="form-control" name="linkedin" value="{{ old('linkedin') }}">
 
                                 @if ($errors->has('linkedin'))
                                     <span class="help-block">
@@ -162,18 +162,18 @@
                         </div> 
                                              
 
-                        <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
-                            <label for="type" class="col-md-4 control-label">Tipo de Pessoa</label>
+                        <div class="form-group{{ $errors->has('usertype') ? ' has-error' : '' }}">
+                            <label for="usertype" class="col-md-4 control-label">Tipo de Pessoa</label>
 
                             <div class="col-md-6">
-                                <Select name="type" class="form-control" value="{{ old('type') }}" required>                                    
+                                <Select name="usertype" class="form-control" value="{{ old('usertype') }}" required>                                    
                                     <option value="F">Físico</option>
                                     <option value="J">Jurídico</option>
                                 </select>  
                                 
-                                @if ($errors->has('type'))
+                                @if ($errors->has('usertype'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('type') }}</strong>
+                                        <strong>{{ $errors->first('usertype') }}</strong>
                                     </span>
                                 @endif  
                             </div>
@@ -197,7 +197,7 @@
                             <label for="neighborhood" class="col-md-4 control-label">Bairro</label>
 
                             <div class="col-md-6">
-                                <input id="neighborhood" class="form-control" value="{{ old('neighborhood') }}" name="neighborhood" required>
+                                <input id="neighborhood" class="form-control" value="{{ old('neighborhood') }}" name="neighborhood">
 
                                 @if ($errors->has('neighborhood'))
                                     <span class="help-block">
@@ -225,7 +225,7 @@
                             <label for="street" class="col-md-4 control-label">Rua</label>
 
                             <div class="col-md-6">
-                                <input id="street" class="form-control" value="{{ old('street') }}" name="street" required>
+                                <input id="street" class="form-control" value="{{ old('street') }}" name="street">
 
                                 @if ($errors->has('street'))
                                     <span class="help-block">
@@ -235,15 +235,15 @@
                             </div>
                         </div>                          
                         
-                        <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
-                            <label for="number" class="col-md-4 control-label">Número</label>
+                        <div class="form-group{{ $errors->has('streetnumber') ? ' has-error' : '' }}">
+                            <label for="streetnumber" class="col-md-4 control-label">Número</label>
 
                             <div class="col-md-6">
-                                <input id="number" class="form-control" value="{{ old('number') }}" name="number">
+                                <input id="streetnumber" class="form-control" value="{{ old('streetnumber') }}" name="streetnumber">
 
-                                @if ($errors->has('number'))
+                                @if ($errors->has('streetnumber'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('number') }}</strong>
+                                        <strong>{{ $errors->first('streetnumber') }}</strong>
                                     </span>
                                 @endif
                             </div>
