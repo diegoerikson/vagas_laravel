@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\admin\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -50,29 +50,29 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-            'active' => 'required|string|max:1',
+            'password' => 'required|string|min:6|confirmed',            
             'skype' => 'string|max:50', 
+            'active' => 'required|string|max:1',
             'phone' => 'required|string|max:20', 
             'phone2' => 'string|max:20', 
             'gender' => 'required|string|max:1', 
-            'dtbirth' => 'required|string|min:10', 
-           
+            'dtbirth' => 'required|date', 
+            'idcompany' => 'numeric', 
+            'idcity' => 'numeric', 
             'usertype' => 'required|string|max:1',  
             'cpf_cnpj' => 'required|string|max:25', 
             'neighborhood' => 'string|max:50',             
-            'street' => 'string|max:200', 
-            
+            'street' => 'string|max:200',             
+            'streetnumber' => 'numeric', 
             'complement' => 'string|max:100', 
             'cep' => 'required|string|max:20', 
             'site' => 'string|max:150', 
-            'linkedin' => 'string|max:250', 
-            
+            'linkedin' => 'string|max:250',             
             'note' => 'string', 
             'userimage' => 'string|max:200', 
             'cnh' => 'string|max:10',   
-            
-            'deficient' => 'required|string|max:1'                           
+            'acceptemail' => 'required|string|max:1', 
+            'deficient' => 'required|string|max:1',                           
         ]);
     }
 
@@ -110,7 +110,7 @@ class RegisterController extends Controller
             'userimage' => $data['userimage'],
             'cnh' => $data['cnh'],
             'acceptemail' => $data['acceptemail'],
-            'deficient' => $data['deficient']                       
+            'deficient' => $data['deficient'],                 
         ]);
     }
 }
