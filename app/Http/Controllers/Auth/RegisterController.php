@@ -57,8 +57,7 @@ class RegisterController extends Controller
             'phone2' => 'string|max:20', 
             'gender' => 'required|string|max:1', 
             'dtbirth' => 'required|string|min:10', 
-            'idcompany' => 'number', 
-            'idcity' => 'required|number', 
+           
             'usertype' => 'required|string|max:1',  
             'cpf_cnpj' => 'required|string|max:25', 
             'neighborhood' => 'string|max:50',             
@@ -68,11 +67,11 @@ class RegisterController extends Controller
             'cep' => 'required|string|max:20', 
             'site' => 'string|max:150', 
             'linkedin' => 'string|max:250', 
-            'dtexclusion' => 'string|min:10', 
+            
             'note' => 'string', 
-            'image' => 'string|max:200', 
+            'userimage' => 'string|max:200', 
             'cnh' => 'string|max:10',   
-            'acceptemail' => 'required|string|max:10', 
+            
             'deficient' => 'required|string|max:1'                           
         ]);
     }
@@ -108,7 +107,7 @@ class RegisterController extends Controller
             'linkedin' => $data['linkedin'],
             'dtexclusion' => '',
             'note' => $data['note'],
-            'image' => $data['image'],
+            'userimage' => $data['userimage'],
             'cnh' => $data['cnh'],
             'acceptemail' => $data['acceptemail'],
             'deficient' => $data['deficient']                       

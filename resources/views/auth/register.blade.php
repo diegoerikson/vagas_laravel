@@ -105,15 +105,15 @@
                             </div>                                                           
                         </div>   
                         
-                        <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
-                            <label for="image" class="col-md-4 control-label">Foto</label>
+                        <div class="form-group{{ $errors->has('userimage') ? ' has-error' : '' }}">
+                            <label for="userimage" class="col-md-4 control-label">Foto</label>
 
                             <div class="col-md-6">
-                                <input id="image" type="text" class="form-control" name="image" value="{{ old('image') }}">
+                                <input id="userimage" type="text" class="form-control" name="userimage" value="{{ old('userimage') }}">
 
-                                @if ($errors->has('image'))
+                                @if ($errors->has('userimage'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('image') }}</strong>
+                                        <strong>{{ $errors->first('userimage') }}</strong>
                                     </span>
                                 @endif                              
                             </div>                                                           
@@ -183,7 +183,7 @@
                             <label for="cpf_cnpj" class="col-md-4 control-label">Cpf/Cnpj</label>
 
                             <div class="col-md-6">
-                                <input id="cpf_cnpj" class="form-control" value="{{ old('cpf_cnpj') }}" name="cpf_cnpj" required>
+                                <input id="cpf_cnpj" type="text" class="form-control" value="{{ old('cpf_cnpj') }}" name="cpf_cnpj" required>
 
                                 @if ($errors->has('cpf_cnpj'))
                                     <span class="help-block">
@@ -197,7 +197,7 @@
                             <label for="neighborhood" class="col-md-4 control-label">Bairro</label>
 
                             <div class="col-md-6">
-                                <input id="neighborhood" class="form-control" value="{{ old('neighborhood') }}" name="neighborhood">
+                                <input id="neighborhood" type="text" class="form-control" value="{{ old('neighborhood') }}" name="neighborhood">
 
                                 @if ($errors->has('neighborhood'))
                                     <span class="help-block">
@@ -225,7 +225,7 @@
                             <label for="street" class="col-md-4 control-label">Rua</label>
 
                             <div class="col-md-6">
-                                <input id="street" class="form-control" value="{{ old('street') }}" name="street">
+                                <input id="street" type="text" class="form-control" value="{{ old('street') }}" name="street">
 
                                 @if ($errors->has('street'))
                                     <span class="help-block">

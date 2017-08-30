@@ -18,7 +18,7 @@ class User extends Authenticatable
     'skype', 'phone', 'phone2', 'gender', 'dtbirth',
     'idcompany', 'idcity', 'usertype', 'cpf_cnpj', 'neighborhood',
     'street', 'streetnumber', 'complement',
-    'cep', 'site', 'linkedin', 'dtexclusion', 'note', 'image',
+    'cep', 'site', 'linkedin', 'dtexclusion', 'note', 'userimage',
     'cnh', 'acceptemail', 'deficient', 'updated_at', 'created_at'];
 
     /**
