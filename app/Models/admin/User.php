@@ -14,13 +14,13 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password',
-        'active',
-    'skype', 'phone', 'phone2', 'gender', 'dtbirth',
-    'idcompany', 'idcity', 'usertype', 'cpf_cnpj', 'neighborhood',
-    'street', 'streetnumber', 'complement',
-    'cep', 'site', 'linkedin', 'dtexclusion', 'note', 'userimage',
-    'cnh', 'acceptemail', 'deficient',
+    protected $fillable = ['name', 'email', 'password', 'active', 'phone', 'gender', 
+        'dtbirth', 'usertype', 'cpf_cnpj', 'cep', 'acceptemail', 'deficient',
+    //'skype', 'phone', 'phone2', 'gender', 
+    //'idcompany', 'idcity',  'neighborhood',
+    //'street', 'streetnumber', 'complement',
+    // 'site', 'linkedin', 'dtexclusion', 'note', 'userimage',
+    //'cnh', 
     ];
 
     /**
