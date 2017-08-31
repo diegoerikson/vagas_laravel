@@ -68,7 +68,7 @@ class OpportunitieController extends Controller
      */
     public function edit($id)
     {
-        //
+        //0
     }
 
     /**

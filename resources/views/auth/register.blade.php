@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('templateRegister.templateRegister')
 
 @section('content')
 <div class="container">
