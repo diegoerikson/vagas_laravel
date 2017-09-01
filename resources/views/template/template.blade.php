@@ -65,12 +65,6 @@
                     <span class="logo-lg"><b>RH</b>Vagas</span>
                 </a>
 
-                <!-- Header Navbar -->
-                <!--class="collapse navbar-collapse" id="app-navbar-collapse-->
-                <!-- cabecalho -->   
-                <!--class="navbar navbar-fixed-top navbar-inverse"-->
-                <!--<div class="collapse navbar-collapse" role="navigation">-->
-                <!-- Header Navbar: style can be found in header.less -->
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top">
                     <!-- Sidebar toggle button-->
@@ -97,7 +91,7 @@
                                 <li class="user-header">
                                     <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                     <p>
-                                        Alexander Pierce - Web Developer                  
+                                        {{ Auth::user()->name }} - Colocar a profissao aqui
                                     </p>
                                 </li>
                                 <!-- Menu Footer-->
@@ -120,7 +114,7 @@
                             </li>
                         </ul>     	
                     </div>
-                </nav>			
+                </nav>		
             </header>
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="main-sidebar">
