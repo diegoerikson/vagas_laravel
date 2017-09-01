@@ -56,7 +56,6 @@
 
             <!-- Main Header -->
             <header class="main-header">
-
                 <!-- Logo -->
                 <a href="index2.html" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -68,17 +67,19 @@
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top">
                     <!-- Sidebar toggle button-->
+                    @if (Auth::guest())	
+                    @else
                     <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                         <span class="sr-only">Toggle navigation</span>
                     </a>
-
+                    @endif
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
                             <!-- Messages: style can be found in dropdown.less-->          
                             <!-- User Account: style can be found in dropdown.less -->
                             <li class="dropdown user user-menu">
-                                <!-- Authentication Links -->
-                                @if (Auth::guest())			
+                            <!-- Authentication Links -->
+                            @if (Auth::guest())			
                             <li><a href="{{ route('login') }}">Entrar</a></li>
                             <li><a href="{{ route('register') }}">Registrar</a></li>
                             @else
@@ -116,7 +117,7 @@
                     </div>
                 </nav>		
             </header>
-            <!-- Left side column. contains the logo and sidebar -->
+            <!-- Left side column. contains the logo and sidebar -->            
             <aside class="main-sidebar">
 
                 <!-- sidebar: style can be found in sidebar.less -->
@@ -157,6 +158,7 @@
                 </section>
                 <!-- /.sidebar -->
             </aside>
+            
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
