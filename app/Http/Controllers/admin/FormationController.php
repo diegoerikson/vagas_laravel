@@ -18,20 +18,17 @@ class FormationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Formation $formation)
     {
-     
+      $formations = $this->formation->paginate(5);
+       
+       return view('admin.formacoes.formacoes', compact('formations'));
         
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.formacoes.cadastrarFormacao');
     }
 
     /**
