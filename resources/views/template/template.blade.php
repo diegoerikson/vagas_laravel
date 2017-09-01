@@ -68,53 +68,59 @@
                 <!-- Header Navbar -->
                 <!--class="collapse navbar-collapse" id="app-navbar-collapse-->
                 <!-- cabecalho -->   
-                <nav class="navbar navbar-fixed-top navbar-inverse">
-                    <div class="container">
-                        <div class="navbar-header">   
-                            <!-- botao toggle -->
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
-                                <span class="sr-only">alternar navegação</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>   
+                <!--class="navbar navbar-fixed-top navbar-inverse"-->
+                <!--<div class="collapse navbar-collapse" role="navigation">-->
+                <!-- Header Navbar: style can be found in header.less -->
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
 
-
-
-                        </div>
-
-                        <!-- navbar -->                
-                        <div class="collapse navbar-collapse" id="barra-navegacao">
-                            <ul class="nav navbar-nav navbar-right">            
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- Messages: style can be found in dropdown.less-->          
+                            <!-- User Account: style can be found in dropdown.less -->
+                            <li class="dropdown user user-menu">
                                 <!-- Authentication Links -->
-                                @if (Auth::guest())
-                                <li><a href="{{ route('login') }}">Login</a></li>
-                                <li><a href="{{ route('register') }}">Register</a></li>
-                                @else
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                        {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
-
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li>
-                                            <a href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                                Logout
-                                            </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                {{ csrf_field() }}
-                                            </form>
-                                        </li>
-                                    </ul>
+                                @if (Auth::guest())			
+                            <li><a href="{{ route('login') }}">Entrar</a></li>
+                            <li><a href="{{ route('register') }}">Registrar</a></li>
+                            @else
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <p>
+                                        Alexander Pierce - Web Developer                  
+                                    </p>
                                 </li>
-                                @endif
-                            </ul>
-                        </div>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                    </div>
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Curriculo</a>
+                                    </div>				
+                                    <div class="pull-right">
+                                        <a class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">    
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul>					
+                            @endif
+                            </li>
+                        </ul>     	
                     </div>
-                </nav>   			
+                </nav>			
             </header>
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="main-sidebar">
