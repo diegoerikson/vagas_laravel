@@ -52,13 +52,20 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',                            
             'phone' => 'required|string|max:20', 
+            'phone2' => 'string|max:20', 
             'gender' => 'required|string|max:1',
             'dtbirth' => 'required|date',    
             'usertype' => 'required|string|max:1',  
             'cpf_cnpj' => 'required|string|max:25', 
             'cep' => 'required|string|max:20', 
             'acceptemail' => 'required|string|max:1', 
-            'deficient' => 'required|string|max:1',                           
+            'deficient' => 'required|string|max:1',                                                                          
+            'streetnumber' => 'numeric',    
+            'complement' => 'string|max:100',
+            'site' => 'string|max:150',
+            'linkedin' => 'string|max:200',
+            'note' => 'string|max:500',
+            'skype' => 'string|max:50',
             
             
         ]);
@@ -78,13 +85,20 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),                     
             'active' => 'N',
             'phone' => $data['phone'],            
+            'phone2' => $data['phone2'],            
             'gender' => $data['gender'],
             'dtbirth' => $data['dtbirth'], 
             'usertype' => $data['usertype'],
             'cpf_cnpj' => $data['cpf_cnpj'],
             'cep' => $data['cep'],
             'acceptemail' => $data['acceptemail'],
-            'deficient' => $data['deficient'], 
+            'deficient' => $data['deficient'],                      
+            'streetnumber' => $data['streetnumber'],            
+            'complement' => $data['complement'],
+            'site' => $data['site'],
+            'linkedin' => $data['linkedin'],
+            'note' => $data['note'],
+            'skype' => $data['skype'],
             
             
         ]);
