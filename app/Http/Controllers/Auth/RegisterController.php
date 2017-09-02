@@ -56,7 +56,7 @@ class RegisterController extends Controller
             'gender' => 'required|string|max:1',
             'dtbirth' => 'required|date',    
             'usertype' => 'required|string|max:1',  
-            'cpf_cnpj' => 'required|string|max:25', 
+            'cpf_cnpj' => 'required|string|max:25|unique:users', 
             'cep' => 'required|string|max:20', 
             'acceptemail' => 'required|string|max:1', 
             'deficient' => 'required|string|max:1',                                                                          
@@ -66,6 +66,7 @@ class RegisterController extends Controller
             'linkedin' => 'string|max:200',
             'note' => 'string|max:500',
             'skype' => 'string|max:50',
+            'picture' => 'mimes:jpeg,jpg,png',
             
             
         ]);
@@ -99,6 +100,7 @@ class RegisterController extends Controller
             'linkedin' => $data['linkedin'],
             'note' => $data['note'],
             'skype' => $data['skype'],
+            'picture' => $data['picture'],
             
             
         ]);
