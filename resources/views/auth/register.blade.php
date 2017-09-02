@@ -162,34 +162,6 @@
                             </div>
                         </div> 
 
-                        <div class="form-group{{ $errors->has('streetnumber') ? ' has-error' : '' }}">
-                            <label for="streetnumber" class="col-md-4 control-label">Número</label>
-
-                            <div class="col-md-6">
-                                <input id="streetnumber" type="number" class="form-control" value="{{ old('streetnumber') }}" name="streetnumber">
-
-                                @if ($errors->has('streetnumber'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('streetnumber') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                        </div>                         
-
-                        <div class="form-group{{ $errors->has('complement') ? ' has-error' : '' }}">
-                            <label for="complement" class="col-md-4 control-label">Complemento</label>
-
-                            <div class="col-md-6">
-                                <input id="complement" class="form-control" value="{{ old('complement') }}" name="complement">
-
-                                @if ($errors->has('complement'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('complement') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                        </div>   
-
                         <div class="form-group{{ $errors->has('skype') ? ' has-error' : '' }}">
                             <label for="skype" class="col-md-4 control-label">Skype</label>
 

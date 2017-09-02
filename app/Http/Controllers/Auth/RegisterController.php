@@ -52,23 +52,19 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',                            
             'phone' => 'required|string|max:20', 
-            'phone2' => 'string|max:20', 
+            'phone2' => 'string|max:20|nullable', 
             'gender' => 'required|string|max:1',
             'dtbirth' => 'required|date',    
             'usertype' => 'required|string|max:1',  
             'cpf_cnpj' => 'required|string|max:25|unique:users', 
             'cep' => 'required|string|max:20', 
             'acceptemail' => 'required|string|max:1', 
-            'deficient' => 'required|string|max:1',                                                                          
-            'streetnumber' => 'numeric',    
-            'complement' => 'string|max:100',
-            'site' => 'string|max:150',
-            'linkedin' => 'string|max:200',
-            'note' => 'string|max:500',
-            'skype' => 'string|max:50',
-            'picture' => 'mimes:jpeg,jpg,png',
-            
-            
+            'deficient' => 'required|string|max:1',                                                                                      
+            'site' => 'string|max:150|nullable',
+            'linkedin' => 'string|max:200|nullable',
+            'note' => 'string|max:500|nullable',
+            'skype' => 'string|max:50|nullable',
+            'picture' => 'mimes:jpeg,jpg,png|nullable',                    
         ]);
     }
 
@@ -93,16 +89,12 @@ class RegisterController extends Controller
             'cpf_cnpj' => $data['cpf_cnpj'],
             'cep' => $data['cep'],
             'acceptemail' => $data['acceptemail'],
-            'deficient' => $data['deficient'],                      
-            'streetnumber' => $data['streetnumber'],            
-            'complement' => $data['complement'],
+            'deficient' => $data['deficient'],                                  
             'site' => $data['site'],
             'linkedin' => $data['linkedin'],
             'note' => $data['note'],
             'skype' => $data['skype'],
-            'picture' => $data['picture'],
-            
-            
+            'picture' => $data['picture'],                        
         ]);
     }
 }
