@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Models\site\Opportunitie;
+use App\models\admin\Formation;
 
 class OpportunitieController extends Controller
 {
@@ -35,7 +36,9 @@ class OpportunitieController extends Controller
      */
     public function create()
     {
-        //
+        $formations = Formation::pluck('name', 'idformation')->all();
+        
+        return view('site.cadastroVagas', compact('formations'));
     }
 
     /**

@@ -38,6 +38,10 @@
                 </tbody>
             </table>
         </div>
+        <div>
+            <a href="{{route('cadastrarVagas.create')}}" class="btn btn-primary btn-add">
+        <span class="glyphicon glyphicon-plus"></span> Cadastrar</a>
+        </div>
     </div>
 </div>
 

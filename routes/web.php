@@ -25,7 +25,7 @@ Route::group(['prefix' => 'admin'], function(){
  
  Route::get('/formacoes', 'admin\FormationController@index');
  
- Route::resource('/cadastrarFormacao', 'admin\FormationController');
+ Route::resource('/cadastrarVagas', 'site\OpportunitieController');
  
 
 Auth::routes();
