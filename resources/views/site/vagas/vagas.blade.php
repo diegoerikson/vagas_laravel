@@ -32,14 +32,14 @@
                         <td>{{$opportunitie->description}}</td>
                     </tr>  
                     @empty
-                <p>Não há vagas cadastradas no momento!</p>
+                <h4>Não há vagas cadastradas no momento!</h4>
                 @endforelse
 
                 </tbody>
             </table>
         </div>
         <div>
-            <a href="{{route('cadastrarVagas.create')}}" class="btn btn-primary btn-add">
+            <a href="{{route('vagas.create')}}" class="btn btn-primary btn-add">
         <span class="glyphicon glyphicon-plus"></span> Cadastrar</a>
         </div>
     </div>

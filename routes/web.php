@@ -18,6 +18,11 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function(){
    
    
+});
+
+Route::group(['prefix' => 'site'], function(){
+   
+     Route::resource('/vagas', 'site\OpportunitieController');
    
 });
 
@@ -25,7 +30,9 @@ Route::group(['prefix' => 'admin'], function(){
  
  Route::get('/formacoes', 'admin\FormationController@index');
  
- Route::resource('/cadastrarVagas', 'site\OpportunitieController');
+ //Route::resource('/cadastrar', 'site\OpportunitieController');
+ 
+
  
 
 Auth::routes();

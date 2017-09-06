@@ -8,31 +8,33 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}">
         <!-- Ionicons -->
-        <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+        <link rel="stylesheet" href="{{asset('bower_components/Ionicons/css/ionicons.min.css')}}">
         <!-- Theme style -->
-        <link rel="stylesheet" href="dist/css/AdminLTE.css">
+        <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.css')}}">
         <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
               page. However, you can choose any other skin. Make sure you
               apply the skin class to the body tag so the changes take effect. -->
-        <link rel="stylesheet" href="dist/css/skins/skin-green.css">
+        <link rel="stylesheet" href="{{asset('dist/css/skins/skin-green.css')}}">
 
 
         <!-- daterange picker -->
-        <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+        <link rel="stylesheet" href="{{asset('bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">
         <!-- bootstrap datepicker -->
-        <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="{{asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
         <!-- iCheck for checkboxes and radio inputs -->
-        <link rel="stylesheet" href="plugins/iCheck/all.css">
+        <link rel="stylesheet" href="{{asset('plugins/iCheck/all.css')}}">
         <!-- Bootstrap Color Picker -->
-        <link rel="stylesheet" href="bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+        <link rel="stylesheet" href="{{asset('bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css')}}">
         <!-- Bootstrap time Picker -->
-        <link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css">
+        <link rel="stylesheet" href="{{asset('plugins/timepicker/bootstrap-timepicker.min.css')}}">
         <!-- Select2 -->
-        <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
+        <link rel="stylesheet" href="{{asset('bower_components/select2/dist/css/select2.min.css')}}">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
         <style>
             hr{
@@ -50,8 +52,7 @@
         <![endif]-->
 
         <!-- Google Font -->
-        <link rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     </head>
     <!--
     BODY TAG OPTIONS:
@@ -106,13 +107,13 @@
                             <li><a href="{{ route('register') }}">Registrar</a></li>
                             @else
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
                                 <span class="hidden-xs">{{ Auth::user()->name }}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                                     <p>
                                         {{ Auth::user()->name }} - Colocar a profissao aqui
                                     </p>
@@ -162,7 +163,7 @@
                     <ul class="sidebar-menu" data-widget="tree">
                         <li class="header">Menu</li>
                         <!-- Optionally, you can add icons to the links -->
-                        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Primeiro Link</span></a></li>
+                        <li class="active"><a href="{{url('vagas')}}"><i class="fa fa-link"></i> <span>Vagas</span></a></li>
                         <li><a href="#"><i class="fa fa-link"></i> <span>Segundo Link</span></a></li>
                         <li class="treeview">
                             <a href="#"><i class="fa fa-link"></i> <span>Dropdown</span>
@@ -212,43 +213,43 @@
         </div>
 
         <!-- REQUIRED JS SCRIPTS -->
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <!-- jQuery 3 -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
         <!-- Bootstrap 3.3.7 -->
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
         <!-- AdminLTE App -->
-        <script src="dist/js/adminlte.min.js"></script>
+        <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
 
 
         <!-- Select2 -->
-        <script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+        <script src="{{asset('bower_components/select2/dist/js/select2.full.min.js')}}"></script>
         <!-- InputMask -->
-        <script src="plugins/input-mask/jquery.inputmask.js"></script>
-        <script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-        <script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+        <script src="{{asset('plugins/input-mask/jquery.inputmask.js')}}"></script>
+        <script src="{{asset('plugins/input-mask/jquery.inputmask.date.extensions.js')}}"></script>
+        <script src="{{asset('plugins/input-mask/jquery.inputmask.extensions.js')}}"></script>
         <!-- date-range-picker -->
-        <script src="bower_components/moment/min/moment.min.js"></script>
-        <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="{{asset('bower_components/moment/min/moment.min.js')}}"></script>
+        <script src="{{asset('bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
         <!-- bootstrap datepicker -->
-        <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <script src="{{asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
         <!-- bootstrap color picker -->
-        <script src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+        <script src="{{asset('bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js')}}"></script>
         <!-- bootstrap time picker -->
-        <script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
+        <script src="{{asset('plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
         <!-- SlimScroll -->
-        <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="{{asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
         <!-- iCheck 1.0.1 -->
-        <script src="plugins/iCheck/icheck.min.js"></script>
+        <script src="{{asset('plugins/iCheck/icheck.min.js')}}"></script>
         <!-- FastClick -->
-        <script src="bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="{{asset('bower_components/fastclick/lib/fastclick.js')}}"></script>
         <!-- AdminLTE App -->
         <!-- AdminLTE for demo purposes -->
-        <script src="dist/js/demo.js"></script>
-
-
+        <script src="{{asset('dist/js/demo.js')}}"></script>
+        
+        
         <script>
-                                            $(function () {
+            $(function () {
                                                 //Initialize Select2 Elements
                                                 $('.select2').select2()
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\site\Opportunitie;
 use App\models\admin\Formation;
+use App\models\admin\Hierarchies;
 
 class OpportunitieController extends Controller
 {
@@ -26,7 +27,7 @@ class OpportunitieController extends Controller
     {
         $opportunities = $this->opportunitie->all();
         
-        return view('site.vagas', compact('opportunities'));
+        return view('site.vagas.vagas', compact('opportunities'));
     }
 
     /**
@@ -37,8 +38,9 @@ class OpportunitieController extends Controller
     public function create()
     {
         $formations = Formation::pluck('name', 'idformation')->all();
+        $hierarchys = Hierarchies::pluck('name', 'idhierarchy')->all();
         
-        return view('site.cadastroVagas', compact('formations'));
+        return view('site.vagas.cadastroVagas', compact('formations', 'hierarchys'));
     }
 
     /**
@@ -49,7 +51,17 @@ class OpportunitieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Pega todos os dados vindos do formulário
+        $dadosForm = $request->all();
+        
+        //Inseri os dados no banco
+        $insert = $this->opportunitie->create($dadosForm);
+        
+        if($insert){
+            return redirect()->route('cadastrar.index')->with(['message', 'Vaga criada com sucesso!']);;
+        }else {
+            return redirect()->back();
+        }
     }
 
     /**
@@ -60,7 +72,9 @@ class OpportunitieController extends Controller
      */
     public function show($id)
     {
-        //
+         $opportunities = $this->opportunitie->find($id);
+        
+        return view('site.vagas.visualizarVaga', compact('opportunities'));
     }
 
     /**
@@ -71,7 +85,8 @@ class OpportunitieController extends Controller
      */
     public function edit($id)
     {
-        //0
+        $opportunities = Opportunitie::findOrFail($id);
+        return view('site.editarVaga', compact('opportunities')); //Criar tela de edição ou usar a mesma de cadastro
     }
 
     /**
@@ -83,7 +98,21 @@ class OpportunitieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dataForm = $request->all();
+        
+        $opportunities = $this->opportunitie->find($id);
+         
+        $dataForm['active'] = (!isset($dataForm['active'])) ? 0 : 1;
+        
+        $update = $opportunities->update($dataForm);
+        
+        if($update){
+            return redirect()->route('vagas.index')->with(['message', 'Vaga atualizada com sucesso!']);
+        } else {
+            return redirect()->route('vagas.edit', $id)->with(['erros', 'Falha ao editar']);
+        }
+         
+         
     }
 
     /**
@@ -94,6 +123,14 @@ class OpportunitieController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $opportunities = $this->opportunitie->find($id);
+        
+        $delete = $opportunities->delete();
+        
+        if($delete){
+            return redirect()->route('vagas.index')->with(['message', 'Vaga excluída com sucesso!']);;
+        } else {
+            return redirect()->route('vagas.show', $id)->with(['erros', 'Não foi possível excluir a vaga!']);
+        }
     }
 }
