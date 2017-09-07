@@ -37,8 +37,8 @@ class OpportunitieController extends Controller
      */
     public function create()
     {
-        $formations = Formation::pluck('name', 'idformation')->all();
-        $hierarchys = Hierarchies::pluck('name', 'idhierarchy')->all();
+        $formations = Formation::pluck('idformation', 'name' )->all();
+        $hierarchys = Hierarchies::pluck('idhierarchy', 'name')->all();
         
         return view('site.vagas.cadastroVagas', compact('formations', 'hierarchys'));
     }
@@ -74,7 +74,7 @@ class OpportunitieController extends Controller
     {
          $opportunities = $this->opportunitie->find($id);
         
-        return view('site.vagas.visualizarVaga', compact('opportunities'));
+        return view('site.vagas.visualizarVaga', compact('opportunities'));//Criar tela
     }
 
     /**

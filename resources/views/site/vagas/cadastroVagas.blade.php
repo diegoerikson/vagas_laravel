@@ -39,16 +39,22 @@
                                         <input type="text" name="name" class="form-control" id="name" placeholder="Nome">
                                         <br>
                                         <label>
-                                            Ativo: <input type="checkbox" name="active">
+                                            Ativo: 
+                                            <input type="checkbox" name="active" value="1"
+                                                   @if(isset($opportunities) && $opportunities->active =='1') checked
+                                                   @endif
+                                                   >
                                         </label>
+
                                         <br>
+
                                         <label>Data de vencimento</label>
 
                                         <div class="input-group date">
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input type="text" name="dtclosing" class="form-control pull-right" id="datepicker">
+                                            <input type="date" name="dtclosing" class="form-control pull-right" id="dtclosing">
                                         </div>
 
 
@@ -74,8 +80,8 @@
                                 <div class="form-group">
                                     <div class="col-md-6">
                                         <label for="idhierarchy">Nível:</label>
-                                        <select name="hierarchy" class="form-control select2">
-                                            <option value="0">Escolha a formação</option>
+                                        <select name="idhierarchy" id="idhierarchy" class="form-control select2">
+                                            <option value="0">Escolha o nível</option>
                                             @foreach($hierarchys as $hierarchy)
                                             <option value="{{$hierarchy}}"> {{$hierarchy}} </option>
                                             @endforeach
@@ -85,7 +91,7 @@
 
                                     <div class="col-md-6">
                                         <label for="idformation">Curso:</label>
-                                        <select name="formation" class="form-control select2">
+                                        <select name="idformation" id="idformation" class="form-control select2">
                                             <option value="0">Escolha a formação</option>
                                             @foreach($formations as $formation)
                                             <option value="{{$formation}}"> {{$formation}} </option>
@@ -109,14 +115,14 @@
                             <div class="form-group">
                                 <div class="col-md-6">
                                     <label for="name">Salário:</label>
-                                    <input type="number" name="salary" class="form-control" id="name" placeholder="Salário">
+                                    <input type="number" name="salary" class="form-control" id="salary" placeholder="Salário">
                                     <br>
 
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="description">Benefícios:</label>
-                                    <textarea class="form-control" name="benefis" rows="3" id="description" placeholder="Descrição"></textarea>
+                                    <textarea class="form-control" name="benefits" rows="3" id="benefits" placeholder="Descrição"></textarea>
                                 </div>
 
                             </div>	

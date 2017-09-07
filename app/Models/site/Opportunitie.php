@@ -18,7 +18,7 @@ class Opportunitie extends Model
         'active', 
         'salary', 
         'benefits', 
-        'idinformation', 
+        'idformation', 
         'note', 
         'idcompany', 
         'dtclosing', 
